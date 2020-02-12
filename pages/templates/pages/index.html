@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="{% static '/pages/favicon.ico' %}" type="image/x-icon">
+    <title>MagTickets / Home </title>
+    <meta property="og:site_name" content="MagTickets">
+</head>
+
+
+    <body>
+    <h1>Home</h1>
+    {% if request.user.is_authenticated %}
+    Logged in as <strong>{{ user }}</strong><br>
+    <a href="{% url 'account_logout' %}">Logout</a><br>
+    
+    <p>Create Organizer</p>
+    <a href="{% url 'new-organizer' %}">Create An Organizer</a>
+    
+    <h1>
+        All Events
+        <a href="{% url 'create-event' %}"></a>
+    </h1>
+    <h2>{{note}}</h2>
+    <div style="padding:20px;">
+        {% for event in events %}
+        
+        <h3><a href="{{ event.get_absolute_url }}">{{ event.name }}</a></h3>
+        <img src="{{ event.image.url }}" />
+    </a>
+    {% endfor %}
+    </div>
+    {% else %}
+    <a href="{% url 'account_login' %}">Login</a>
+    {% endif %}
+    <a href="{% url 'create-event' %}">Create Event</a><br>
+</body>
+</html>

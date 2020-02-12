@@ -1,0 +1,58 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{%block description%}{% endblock description %} | TicketMag">
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="{% static 'events/dashboard/fonts/feather/feather.min.css' %}">
+    <link rel="stylesheet" href="{% static 'events/dashboard/libs/flatpickr/dist/flatpickr.min.css' %}">
+    <link rel="stylesheet" href="{% static 'events/dashboard/libs/select2/dist/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'events/dashboard/css/theme.min.css' %}" id="stylesheetLight">
+    
+    <style>
+      .required:after{
+        content: "*";
+        font-weight:bold ;
+        color: red;
+      }
+    </style>
+    <title>{% block title %} {% endblock title %}
+
+    </title>
+  </head>
+
+  <body>
+
+  
+
+
+
+
+    {% block content %}
+    {% endblock content %}
+
+
+
+    <!-- JAVASCRIPT
+    ================================================== -->
+    <!-- Libs JS -->
+    <script src="{% static 'events/dashboard/js/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'events/dashboard/libs/dropzone/dist/min/dropzone.min.js' %}"></script>
+    <script src="{% static 'events/dashboard/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'events/dashboard/libs/autosize/dist/autosize.min.js' %}"></script>
+    <script src="{% static 'events/dashboard/libs/flatpickr/dist/flatpickr.min.js' %}"></script>
+    <script src="{% static 'events/dashboard/libs/jquery-mask-plugin/dist/jquery.mask.min.js' %}"></script>
+    <script src="{% static 'events/dashboard/libs/select2/dist/js/select2.min.js' %}"></script>
+
+    <!-- Map -->
+    <!-- <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script> -->
+
+    <!-- Theme JS -->
+    <script src="{% static 'events/dashboard/js/theme.min.js' %}"></script>
+    {% block extrajs %}
+    {% endblock extrajs %}
+  </body>
+</html>
